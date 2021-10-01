@@ -2,7 +2,9 @@
 using namespace std;
 
 //#define HOUSE
-#define GRADE
+//#define GRADE
+//#define CAR
+#define POV
 
 
 void main()
@@ -95,5 +97,53 @@ void main()
 	cout << "Опускалась ниже метки: " << k << " раз." << endl;
 
 #endif // GRADE
+
+#ifdef CAR
+	/*В массиве хранится информация о стоимости 10 марок автомобилей. Определить сумму наиболее дорогого
+автомобиля и узнать его номер.*/
+
+
+	const int car = 10;
+	int arr[car] = { 1, 2, 6, 4, 9, 8, 9, 7, 2, 1 };
+	int max = arr[0];
+	cout << "Стоимость 10 автомобилей:" << endl;
+	for (int i = 0; i < car; i++)
+	{
+		cout << "Автомабиль " << i + 1 << ": " << arr[i] << " млн.руб." << endl;
+		if (max < arr[i]) max = arr[i];
+	}
+	cout << "Стоимость самого дорогово автомобиля:" << endl;
+	for (int i = 0; i < car; i++)
+	{
+		if (max <= arr[i])
+		{
+			cout << "Автомобиль " << i + 1 << ": " << max << " млн.руб.; " << endl;
+		}
+
+	}
+#endif // CAR
+
+#ifdef POV
+	/*Написать программу, которая находит в массиве значения, повторяющиеся два и более раз, и показывает
+их на экран*/
+
+	const int size = 10;
+	int arr[size] = {};
+	cout << "Введите значение элементов массива:" << endl;
+	for (int i = 0; i < size; i++)
+	{
+		cin >> arr[i];
+	}
+	cout << "Повторяющие элементы: " << endl;
+	for (int i = 0; i < size; i++)
+	{
+		if ((arr[i + 1] == arr[i]) || (arr[i - 1] == arr[i]))
+		{
+			cout << arr[i] << "; ";
+		}
+	}
+#endif // POV
+
+
 
 }
