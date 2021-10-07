@@ -4,7 +4,8 @@ using namespace std;
 //#define HOUSE
 //#define GRADE
 //#define CAR
-#define POV
+//#define POV
+#define ARR
 
 
 void main()
@@ -144,6 +145,64 @@ void main()
 	}
 #endif // POV
 
+#ifdef ARR
 
+
+	/*Заполнить два целочисленных массива A[10] и B[10].Сформировать третий массив X[20], элементы которого будут взяты из A и B.*/
+
+
+	const int AB = 10;
+	const int X = 20;
+	int a[AB];
+	int b[AB];
+	int x[X];
+	int i = 0;
+	int j = 0;
+	int k = 0;
+	for (int i = 0; i < AB; i++)
+	{
+		a[i] = rand();
+		b[i] = rand();
+	}
+	cout << "Массив a:" << endl;
+	for (i = 0; i < AB; i++)
+	{
+		cout << a[i] << "\t";
+	}
+	cout << endl << "Массив b:" << endl;
+	for (i = 0; i < AB; i++)
+	{
+		cout << b[i] << "\t";
+	}
+	cout << endl;
+	for (int c = 0; c < X; c++)
+	{
+		while (j < X)
+		{
+			(j < AB) ? x[j] = a[j] : x[j] = b[j - i];
+			j++;
+		}
+	}
+	cout << "Массив x с последовательным расположением элементов:" << endl;
+	for (int c = 0; c < X; c++)
+	{
+		cout << x[c] << "\t";
+	}
+	cout << endl;
+	for (int c = 0; c < X; c++)
+	{
+		while (k < X)
+		{
+			(k % 2 == 0) ? x[k] = a[k / 2] : x[k] = b[(k - 1) / 2];
+			k++;
+		}
+	}
+	cout << "Массив x с чередующимся расположением элементов:" << endl;
+	for (int c = 0; c < X; c++)
+	{
+		cout << x[c] << "\t";
+	}
+	cout << endl;
+#endif // ARR
 
 }
